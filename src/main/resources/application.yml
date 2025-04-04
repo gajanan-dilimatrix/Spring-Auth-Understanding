@@ -45,7 +45,10 @@ springdoc:
     operations-sorter: method
 
 
-
+admin:
+  password: admin@123
+user:
+  password: user@123
 
 
 
