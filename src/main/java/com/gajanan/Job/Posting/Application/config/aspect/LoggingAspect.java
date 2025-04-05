@@ -30,7 +30,9 @@ public class LoggingAspect {
         String methodName = joinPoint.getSignature().getName();
         String className = joinPoint.getTarget().getClass().getName();
 
-        LOGGER.info("Entered: {}.{} - args: {} ", className, methodName, objectToJSON(Arrays.asList(args)));
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Entered: {}.{} - args: {} ", className, methodName, objectToJSON(Arrays.asList(args)));
+        }
     }
 
     @AfterReturning(value = "pointcut()", returning = "response")
@@ -40,7 +42,9 @@ public class LoggingAspect {
 
         String methodName = joinPoint.getSignature().getName();
         String className = joinPoint.getTarget().getClass().getName();
-        LOGGER.info("Successfully: {}.{} - response: {} ", className, methodName, objectToJSON(response));
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Successfully: {}.{} - response: {} ", className, methodName, objectToJSON(response));
+        }
     }
 
     @AfterThrowing(value = "pointcut()", throwing = "ex")

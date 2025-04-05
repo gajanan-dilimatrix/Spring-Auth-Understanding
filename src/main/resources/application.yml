@@ -1,16 +1,19 @@
 spring:
   application:
     name: Job-Posting-Application
+
   datasource:
     url: jdbc:postgresql://localhost:5432/jobdemo
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
 
-  security:
-    user:
-      name: user
-      password: 1234
+
+
+#  security:
+#    user:
+#      name: user
+#      password: 1234
 
   jpa:
     show-sql: true
@@ -45,10 +48,18 @@ springdoc:
     operations-sorter: method
 
 
-admin:
-  password: admin@123
-user:
-  password: user@123
+#admin:
+#  password: admin@123
+#user:
+#  password: user@123
+
+jwt:
+  secret: 8b06ee5f2759bcf766c55862e9b32a0a8e9d4490b236b53108ca2c9cbfea9278
+  expiration: 3600000
+
+
+
+
 
 
 
